@@ -1,0 +1,207 @@
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+:root {
+    /* algemeen */
+    --color-body: rgb(8, 4, 4);
+    --color-white: #FFF;
+    --color-accent: rgb(233, 181, 39);
+    --color-titles: rgb(255, 255, 255);
+    --color-accent-focus: rgb(252, 255, 85);
+
+    /* header */
+    --color-header: rgb(19, 19, 19);
+
+    /* text */
+    --color-text-white: white;
+    --color-text-black: black;
+
+    /* testkleuren */
+    --color-placeholder: rgb(70, 70, 70);
+
+}
+
+/*************/
+/* BODY/MAIN */
+/*************/
+
+body {
+    margin: 0;
+    padding: 0;
+
+    color: var(--color-text-white);
+    background-color: var(--color-body);
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+
+    text-align: center;
+}
+
+/************/
+/* ALGEMEEN */
+/************/
+
+a {
+    text-decoration: none;
+    color: var(--color-text-white);
+
+    font-weight: 600;
+}
+
+a:hover, a:focus {
+    color: var(--color-accent);
+}
+
+a:focus {
+    outline: none;
+    color: black;
+    background-color: var(--color-accent-focus);
+}
+
+h1, h2 {
+    font-size: 2em;
+    color: var(--color-titles);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/**********/
+/* HEADER */
+/**********/
+
+header {
+    background-color: var(--color-header);
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+}
+
+header li {
+    list-style: none;
+}
+
+header a {
+    display: block;
+    padding: 2em;
+}
+
+header a:hover {
+    background-color: rgb(29, 29, 29);
+}
+
+/***************/
+/* INTRODUCTIE */
+/***************/
+
+.section-1-intro {
+    width: 30em;
+    margin: auto;
+
+    max-width: 90%;
+}
+
+.section-1-intro p {
+    text-align: left;
+}
+
+.section-1-intro a {
+    display: inline-block;
+    width: 100%;
+
+    padding: .5em 0;
+
+    text-align: center;
+
+    background-color: var(--color-accent);
+    color: rgb(255, 255, 255);
+    border-radius: .2em;
+    box-shadow: inset 0em -.2em 0em #0004;
+
+    transition: .2s;
+}
+
+.section-1-intro a:hover, .section-1-intro a:focus {
+    background-color: black;
+    outline: solid .1em var(--color-accent);
+
+    scale: 102%;
+
+    color: var(--color-accent);
+}
+
+/******************/
+/* MIJN PROJECTEN */
+/******************/
+
+/* /* BELANGRIJK!!!!!!!!! */
+/* zet voor die freaking grid shits afbeeldingen neer, want anders blijven ze niet netjes vierkant. Super irritant bro */
+
+.section-2-projecten {
+    margin: auto;
+
+    /* background-color: rgb(17, 17, 17); */
+    color: var(--color-text-black);
+}
+
+.section-2-projecten ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    aspect-ratio: 1;
+    width: 50em;
+
+    margin: auto;
+    max-width: 90%;
+}
+
+@media (max-width: 530px) {
+    .section-2-projecten ul {
+        grid-template-columns: 1fr;
+        aspect-ratio: 1;
+    }
+}
+
+.section-2-projecten li {
+    background-color: #FFF1;
+    list-style: none;
+}
+
+.section-2-projecten a {
+    display: block;
+
+    border-radius: .2em;
+
+    list-style: none;
+    background-color: var(--color-placeholder);
+    
+    transition: .2s;
+}
+
+.section-2-projecten a:hover {
+    background-color: var(--color-accent);
+    scale: 100.5%;
+}
+
+/* .section-2-projecten li {
+    max-width: 100%;
+} */
+
+/* .section-2-projecten a {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    
+} */
