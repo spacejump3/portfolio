@@ -6,12 +6,19 @@
     /* algemeen */
     --color-body: rgb(8, 4, 4);
     --color-white: #FFF;
-    --color-accent: rgb(233, 181, 39);
+    --color-focus: #FFF;
+
+    /* --color-accent: rgb(33, 236, 118); */
+    --color-accent: #37EFB2;
+    --color-accent-lighter: rgb(160, 245, 196);
+
     --color-titles: rgb(255, 255, 255);
-    --color-accent-focus: rgb(252, 255, 85);
 
     /* header */
-    --color-header: rgb(19, 19, 19);
+    --color-header: rgba(19, 19, 19, 0.822);
+
+    /* footer */
+    --color-footer-text: rgba(255, 255, 255, 0.39);
 
     /* text */
     --color-text-white: white;
@@ -22,9 +29,9 @@
 
 }
 
-/*************/
-/* BODY/MAIN */
-/*************/
+/********/
+/* BODY */
+/********/
 
 body {
     margin: 0;
@@ -33,11 +40,72 @@ body {
     color: var(--color-text-white);
     background-color: var(--color-body);
 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1em;
 
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+/**********/
+/* HEADER */
+/**********/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header {
+    background-color: var(--color-header);
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 3px;
+    /* flex: 5; */
+}
+
+/* header li, header a {
+    flex: 5;
+} */
+
+header a {
+    display: block;
+    padding: 2em;
+    white-space: nowrap;
+}
+
+header a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/********/
+/* MAIN */
+/********/
+
+main {
+    flex-grow: 1;
+}
+
+/**********/
+/* FOOTER */
+/**********/
+
+footer {
+    background-color: var(--color-header);
+    color: var(--color-footer-text);
+}
+
 
 /************/
 /* ALGEMEEN */
@@ -57,12 +125,27 @@ a:hover, a:focus {
 a:focus {
     outline: none;
     color: black;
-    background-color: var(--color-accent-focus);
+    background-color: var(--color-accent);
 }
 
 h1, h2 {
     font-size: 2em;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+    
     color: var(--color-titles);
+}
+
+h3 {
+    font-size: 1.25em;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+    
+    color: var(--color-accent);
+}
+
+p {
+    font-weight: 100;
 }
 
 ul {
@@ -70,32 +153,22 @@ ul {
     padding: 0;
 }
 
-/**********/
-/* HEADER */
-/**********/
-
-header {
-    background-color: var(--color-header);
-}
-
-header ul {
-    margin: 0;
-    padding: 0;
-
-    display: flex;
-}
-
-header li {
+li {
     list-style: none;
 }
 
-header a {
-    display: block;
-    padding: 2em;
+::selection {
+    background-color: var(--color-accent);
+    color: black;
+    text-shadow: none;
 }
 
-header a:hover {
-    background-color: rgb(29, 29, 29);
+.current {
+    color: var(--color-accent);
+}
+
+img {
+    border-radius: .2em;
 }
 
 /***************/
@@ -103,39 +176,83 @@ header a:hover {
 /***************/
 
 .section-1-intro {
+    margin: 10em;
     width: 30em;
-    margin: auto;
+    font-size: 1.25em;
 
     max-width: 90%;
+    text-align: left;
+    position: relative;
+
+    z-index: 1;
 }
 
-.section-1-intro p {
-    text-align: left;
+.section-1-intro h1, p {
+    text-shadow: 
+    .1em .1em .2em black;
+}
+
+.section-1-intro h1 {
+    font-weight: 100;
+}
+
+.section-1-intro h1 span {
+    font-weight: 900;
+    color: var(--color-accent);
+}
+
+.buttons-werk-cv {
+    display: flex;
+    gap: 1em;
 }
 
 .section-1-intro a {
     display: inline-block;
-    width: 100%;
 
-    padding: .5em 0;
+    width: 15em;
+    padding: 1em;
 
     text-align: center;
 
     background-color: var(--color-accent);
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border-radius: .2em;
-    box-shadow: inset 0em -.2em 0em #0004;
 
-    transition: .2s;
+    transition: .1s;
+}
+
+.section-1-intro a:nth-of-type(2) {
+    background-color: black;
+    color: var(--color-accent);
+    outline: solid .1em var(--color-accent);
+}
+
+.section-1-intro a:nth-of-type(2):hover, .section-1-intro a:nth-of-type(2):focus {
+    background-color: black;
+    color: var(--color-accent-lighter);
+    outline: solid .1em var(--color-accent-lighter);
 }
 
 .section-1-intro a:hover, .section-1-intro a:focus {
-    background-color: black;
-    outline: solid .1em var(--color-accent);
+    background-color: var(--color-accent-lighter);
+}
 
-    scale: 102%;
+.section-1-intro a:focus, .section-1-intro a:nth-of-type(2):focus {
+    outline: solid .2em var(--color-focus);
+}
 
-    color: var(--color-accent);
+.video-bg {
+    position: fixed;
+    top: 0;
+    right: -10em;
+    height: 100vh;
+
+    z-index: -1;
+
+}
+
+main {
+    background-color: rgba(0, 0, 0, 0.644);
 }
 
 /******************/
@@ -146,62 +263,266 @@ header a:hover {
 /* zet voor die freaking grid shits afbeeldingen neer, want anders blijven ze niet netjes vierkant. Super irritant bro */
 
 .section-2-projecten {
-    margin: auto;
+    margin-bottom: 1em;
+}
 
-    /* background-color: rgb(17, 17, 17); */
-    color: var(--color-text-black);
+.section-2-projecten p {
+    max-width: 90%;
+    width: 20em;
+    margin: 1em auto;
 }
 
 .section-2-projecten ul {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1em;
-    aspect-ratio: 1;
-    width: 50em;
 
-    margin: auto;
+    width: 100%;
     max-width: 90%;
+    margin: auto;
 }
 
-@media (max-width: 530px) {
+@media (max-width: 1200px) {
+    .section-2-projecten ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
     .section-2-projecten ul {
         grid-template-columns: 1fr;
-        aspect-ratio: 1;
     }
 }
 
 .section-2-projecten li {
-    background-color: #FFF1;
-    list-style: none;
+    position: relative;
+}
+
+.section-2-projecten img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    transition: .3s;
+}
+
+.section-2-projecten img:hover {
+    scale: 102%;
 }
 
 .section-2-projecten a {
     display: block;
 
+    transition: .2s;
+    color: #FFF5;
+    border-radius: .2em;
+    overflow: hidden;
+}
+
+.section-2-projecten a:focus {
+    outline: solid .2em var(--color-accent);
+}
+
+/************/
+/* OVER MIJ */
+/************/
+
+/* section 1 introduction */
+.section-3-about-me {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.section-3-about-me section {
+    text-align: left;
+}
+
+.section-3-about-me section h2 {
+    margin-bottom: 0;
+}
+
+.section-3-about-me h3 {
+    margin: 0;
+}
+
+.section-3-about-me p {
+    max-width: 30em;
+    margin: 1em auto;
+}
+
+.section-3-about-me img {
+    width: 20em;
+    max-width: 100%;
+}
+
+.about-me-intro {
+    margin: auto;
+    display: flex;
+    gap: 2em;
+    text-align: left;
+    max-width: 90%;
+    position: relative;
+}
+
+
+.about-me-intro a {
+    display: inline-block;
+
+    width: 15em;
+    padding: 1em;
+
+    text-align: center;
+
+    background-color: var(--color-accent);
+    color: rgb(0, 0, 0);
     border-radius: .2em;
 
-    list-style: none;
-    background-color: var(--color-placeholder);
+    transition: .1s;
+}
+
+.about-me-intro a:hover, .about-me-intro a:focus {
+    background-color: var(--color-accent-lighter);
+}
+
+.about-me-intro a:focus {
+    outline: solid .2em var(--color-focus);
+}
+
+.about-me-intro img {
+    border-radius: .2em;
+}
+
+/* section 2/3 headings en paragraphs*/
+.about-me-skills h2, .about-me-skills > p, .about-me-skills-soft h2, .about-me-skills-soft > p {
+    text-align: center;
+}
+
+/* section 2 hard skills */
+.section-3-about-me ul {
+    max-width: 90%;
+    margin: auto;
+}
+
+.section-3-about-me li {
+    border: solid 1px var(--color-accent);
+    padding: 2em;
+}
+
+.section-3-about-me li p {
+    margin-bottom: 0;
+}
+
+.about-me-skills {
+    margin: auto;
+    text-align: left;
+}
+
+.about-me-skills ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* section 3 soft skills */
+.about-me-skills-soft li {
+    margin: .5em auto;
+    padding: 1em;
+
+    font-size: 2em;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
     
+    color: var(--color-accent);
+    background-color: #6bffb51a;
+    border: none;
+    max-width: 15em;
+}
+
+@media (max-width: 720px) {
+    .about-me-intro {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-me-skills ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+/***********/
+/* CONTACT */
+/***********/
+
+.section-4-contact p {
+    max-width: 30em;
+    margin: auto;
+}
+
+.section-4-contact a {
+    text-decoration: underline;
+    text-shadow: none;
+}
+
+/******************/
+/* PROJECTPAGINAS */
+/******************/
+
+.project-page {
+    margin-bottom: 1em;
+}
+
+.project-page img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    transition: .3s;
+}
+
+.project-page a:first-of-type {
+    display: block;
+    width: 50em;
+    margin: auto;
+    overflow: hidden;
+    border-radius: .2em;
+}
+
+.project-page a:first-of-type:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.project-page a:first-of-type:focus {
+    outline: solid .2em var(--color-accent);
+}
+
+.project-page img:hover {
+    scale: 102%;
+}
+
+.project-page p {
+    width: 40em;
+    max-width: 90%;
+    text-align: left;
+    margin: auto;
+}
+
+.project-page a:last-of-type {
+    display: inline-block;
+    padding: 1em;
+    max-width: 90%;
+    background-color: var(--color-accent);
+    color: rgb(0, 0, 0);
+    border-radius: .2em;
+
     transition: .2s;
 }
 
-.section-2-projecten a:hover {
-    background-color: var(--color-accent);
-    scale: 100.5%;
+.project-page a:hover, .project-page a:focus {
+    background-color: var(--color-accent-lighter);
+    
 }
 
-/* .section-2-projecten li {
-    max-width: 100%;
-} */
-
-/* .section-2-projecten a {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    
-    
-} */
+.project-page a:focus {
+    outline: solid .2em var(--color-focus);
+}
