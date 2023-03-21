@@ -5,34 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style/style.css" rel="stylesheet">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <title>Stephan Sierra Perdomo</title>
 </head>
 <body>
     <header>
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Mijn werk</a></li>
-            <li><a href="">Over mij</a></li>
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="current">Home</a></li>
+                <li><a href="projecten.html">My work</a></li>
+                <li><a href="about-me.html">About me</a></li>
+            </ul>
+            <a href="contact-page.html">Contact</a>
+        </nav>
     </header>
     <main>
         <section class="section-1-intro">
-            <h1>Stephan Sierra Perdomo</h1>
-            <p>Hieronder zie je allemaal verschillende shits die ik heb gemaakt. Je kan ook een kijkje nemen op mijn cv als je dat interessant vind.</p>
-            <a href="">CV</a>
+            <h1>My name is <span>Stephan Sierra Perdomo</span> and welcome to my portfolio!</h1>
+            <p>I'm currently a CMD student working to get my skills up. Feel free to take a look at my progress!</p>
+            <div class="buttons-werk-cv">
+                <a href="projecten.html">My work</a>
+                <a href="img/cv-2022.pdf" target="_blank">CV</a>
+            </div>
         </section>
-        <section class="section-2-projecten">
-            <h2>Mijn projecten</h2>
-            <ul>
-                <li><a href="">item 1</a></li>
-                <li><a href="">item 2</a></li>
-                <li><a href="">item 3</a></li>
-                <li><a href="">item 4</a></li>
-            </ul>
-        </section>
+        <video autoplay muted loop class="video-bg">
+            <source src="video/bg-vid.mp4">
+        </video>
     </main>
     <footer>
-        <p>blablabla opvulling</p>
+        <p>2022</p>
     </footer>
 </body>
 </html>
