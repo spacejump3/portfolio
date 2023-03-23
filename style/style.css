@@ -26,12 +26,7 @@
 
     /* testkleuren */
     --color-placeholder: rgb(70, 70, 70);
-
 }
-
-/********/
-/* BODY */
-/********/
 
 body {
     margin: 0;
@@ -49,10 +44,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
-/**********/
-/* HEADER */
-/**********/
 
 nav {
     display: flex;
@@ -72,12 +63,7 @@ header ul {
     flex-wrap: wrap;
 
     gap: 3px;
-    /* flex: 5; */
 }
-
-/* header li, header a {
-    flex: 5;
-} */
 
 header a {
     display: block;
@@ -89,17 +75,9 @@ header a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/********/
-/* MAIN */
-/********/
-
 main {
     flex-grow: 1;
 }
-
-/**********/
-/* FOOTER */
-/**********/
 
 footer {
     background-color: var(--color-header);
@@ -107,9 +85,7 @@ footer {
 }
 
 
-/************/
-/* ALGEMEEN */
-/************/
+/* algemeen */
 
 a {
     text-decoration: none;
@@ -171,9 +147,7 @@ img {
     border-radius: .2em;
 }
 
-/***************/
-/* INTRODUCTIE */
-/***************/
+/* introductie */
 
 .section-1-intro {
     margin: 10em;
@@ -255,11 +229,9 @@ main {
     background-color: rgba(0, 0, 0, 0.644);
 }
 
-/******************/
-/* MIJN PROJECTEN */
-/******************/
+/* mijn projecten */
 
-/* /* BELANGRIJK!!!!!!!!! */
+/* BELANGRIJK!!!!!!!!! */
 /* zet voor die freaking grid shits afbeeldingen neer, want anders blijven ze niet netjes vierkant. Super irritant bro */
 
 .section-2-projecten {
@@ -274,11 +246,11 @@ main {
 
 .section-2-projecten ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1em;
 
     width: 100%;
-    max-width: 90%;
+    max-width: 70%;
     margin: auto;
 }
 
@@ -323,9 +295,7 @@ main {
     outline: solid .2em var(--color-accent);
 }
 
-/************/
-/* OVER MIJ */
-/************/
+/* over mij */
 
 /* section 1 introduction */
 .section-3-about-me {
@@ -424,6 +394,7 @@ main {
 }
 
 /* section 3 soft skills */
+
 .about-me-skills-soft li {
     margin: .5em auto;
     padding: 1em;
@@ -449,9 +420,7 @@ main {
     }
 }
 
-/***********/
-/* CONTACT */
-/***********/
+/* contact */
 
 .section-4-contact p {
     max-width: 30em;
@@ -463,9 +432,7 @@ main {
     text-shadow: none;
 }
 
-/******************/
-/* PROJECTPAGINAS */
-/******************/
+/* projectpagina's */
 
 .project-page {
     margin-bottom: 1em;
@@ -510,6 +477,7 @@ main {
 .project-page a:last-of-type {
     display: inline-block;
     padding: 1em;
+    margin-top: 1em;
     max-width: 90%;
     background-color: var(--color-accent);
     color: rgb(0, 0, 0);

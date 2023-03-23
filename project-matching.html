@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/style.css" rel="stylesheet">
+    <title>Matching app</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projecten.html" class="current">My work</a></li>
+                <li><a href="about-me.html">About me</a></li>
+            </ul>
+            <a href="contact-page.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="project-page javascript">
+            <h2>Make a matching app</h2>
+            <a href="https://github.com/spacejump3/blok-tech-matchingapp" target="_blank"><img src="img/item-tech.png" alt=""></a>
+            <h2>Problem</h2>
+            <p>Create a matching app where you using nodejs, a templating engine and a database. The 'matches' should be stored in the database and rendered onto the results view.</p>
+            <h2>Process</h2>
+            <p>I wanted to make an app where you can select your interests using a form, and based on your choices, different results would show up. I made this using a form which sends the inputs to the database, which then returns objects with the corresponding checkboxes you selected.</p> 
+            <p>To start off I had to install all the necessary application to get this server running. I needed git, express, nodejs and ejs. So with that I created a repository and started to make a simple server to see if it worked. Whenever that was done, I could start making my views and creating routes in my index.js. The final thing to do was create a connection with the MongoDB database, make some collections in there and it was all done!</p>
+            <h2>Result</h2>
+            <video width="800" src="/video/matching-vid.mkv" type="video/mp4" controls></video>
+            <p>The result is a simple web application which retrieves data from a database. It was definitely hard to figure everything out, but it was a valuable learning experience.</p>
+            <a href="https://github.com/spacejump3/blok-tech-matchingapp" target="_blank">Check out the result</a>
+        </section>
+    </main>
+    <footer>
+        <p>2023</p>
+    </footer>
+</body>
+</html>
